@@ -1,6 +1,6 @@
 {
   "name": "joi-jasmine-helpers",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Custom matchers for writing unit test for joi schemas and extensions",
   "main": "lib/index.js",
   "scripts": {
