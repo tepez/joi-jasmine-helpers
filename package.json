@@ -1,0 +1,32 @@
+{
+  "name": "joi-jasmine-helpers",
+  "version": "0.1.0",
+  "description": "Custom matchers for writing unit test for joi schemas and extensions",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/jasmine/bin/jasmine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tepez/joi-jasmine-helpers.git"
+  },
+  "keywords": [
+    "joi",
+    "extensions",
+    "jasmine",
+    "test"
+  ],
+  "author": "Tom Tepez Yam <tomyam@tepez.co.il> (https://github.com/tepez)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tepez/joi-jasmine-helpers/issues"
+  },
+  "homepage": "https://github.com/tepez/joi-jasmine-helpers#readme",
+  "devDependencies": {
+    "jasmine": "^2.7.0",
+    "joi": "^10.6.0"
+  },
+  "dependencies": {
+    "lodash.isregexp": "^4.0.1"
+  }
+}
