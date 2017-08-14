@@ -1,7 +1,7 @@
 # joi-jasmine-helpers
 > Custom matchers for writing unit test for [joi](https://github.com/hapijs/joi) schemas and extensions
 
-[![npm version](https://badge.fury.io/js/joi-date-extensions.svg)](http://badge.fury.io/js/joi-jasmine-helpers)
+[![npm version](https://badge.fury.io/js/joi-jasmine-helpers.svg)](http://badge.fury.io/js/joi-jasmine-helpers)
 [![Build Status](https://secure.travis-ci.org/tepez/joi-jasmine-helpers.svg?branch=master)](http://travis-ci.org/tepez/joi-jasmine-helpers)
 
 ## Usage
