@@ -1,32 +1,35 @@
 {
-  "name": "joi-jasmine-helpers",
-  "version": "0.1.1",
-  "description": "Custom matchers for writing unit test for joi schemas and extensions",
-  "main": "lib/index.js",
+  "name": "@tepez/joi-jasmine-helpers",
+  "version": "0.0.0",
+  "description": "Custom matchers for writing unit test in Jasmine for hapijs/joi schemas and extensions",
   "scripts": {
-    "test": "node node_modules/jasmine/bin/jasmine.js"
+    "update": "node node_modules/gulp/bin/gulp.js build && node node_modules/np/cli.js --no-publish --no-yarn",
+    "build": "node node_modules/gulp/bin/gulp.js build",
+    "test": "node node_modules/gulp/bin/gulp.js build-unit-test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tepez/joi-jasmine-helpers.git"
   },
-  "keywords": [
-    "joi",
-    "extensions",
-    "jasmine",
-    "test"
-  ],
-  "author": "Tom Tepez Yam <tomyam@tepez.co.il> (https://github.com/tepez)",
+  "author": "Tom Yam <tomyam@tepez.co.il>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tepez/joi-jasmine-helpers/issues"
   },
   "homepage": "https://github.com/tepez/joi-jasmine-helpers#readme",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
   "devDependencies": {
-    "jasmine": "^2.7.0",
-    "joi": "^10.6.0"
+    "@tepez/jasmine-misc-matchers": "^0.2.1",
+    "@tepez/typescript-build-gulp-tasks": "^3.1.0",
+    "@types/jasmine": "^3.3.0",
+    "gulp": "^3.9.1",
+    "joi": "^14.1.0",
+    "np": "^3.0.4"
   },
   "dependencies": {
+    "@types/joi": "^14.0.0",
+    "@types/lodash.isregexp": "^4.0.4",
     "lodash.isregexp": "^4.0.1"
   }
 }
