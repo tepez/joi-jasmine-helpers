@@ -7,9 +7,17 @@ export type MessageMatcher = string | RegExp
 declare global {
     namespace jasmine {
         interface Matchers<T> {
-            toPassValidation(value: any, expectedValue?: any, validateOptions?: ValidationOptions): void
+            toPassValidation<SrcValueType, ExpectedValueType>(
+                value: SrcValueType,
+                expectedValue?: ExpectedValueType,
+                validateOptions?: ValidationOptions,
+            ): void
 
-            toFailValidation(value: any, messageMatcher?: MessageMatcher, validateOptions?: ValidationOptions): void
+            toFailValidation<SrcValueType>(
+                value: SrcValueType,
+                messageMatcher?: MessageMatcher,
+                validateOptions?: ValidationOptions,
+            ): void
         }
     }
 }
