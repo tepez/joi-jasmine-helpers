@@ -15,7 +15,7 @@ declare global {
 }
 
 
-function schemaToString(schema: Schema): string {
+function schemaToString(_schema: Schema): string {
     return '<SCHEMA>';
 }
 
@@ -49,7 +49,7 @@ export const matchers: CustomMatcherFactories = {
     },
 
     toFailValidation: () => {
-        function testMessageMatcher(messageMatcher): void {
+        function testMessageMatcher(messageMatcher: MessageMatcher): void {
             if (typeof messageMatcher !== 'undefined'
                 && typeof messageMatcher !== 'string'
                 && !isRegExp(messageMatcher)) {

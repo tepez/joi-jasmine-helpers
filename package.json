@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "description": "Custom matchers for writing unit test in Jasmine for hapijs/joi schemas and extensions",
   "scripts": {
-    "update": "node node_modules/gulp/bin/gulp.js build && node node_modules/np/cli.js --no-publish --no-yarn",
-    "build": "node node_modules/gulp/bin/gulp.js build",
-    "test": "node node_modules/gulp/bin/gulp.js build-unit-test"
+    "update": "npx gulp build && npx np --no-publish --no-yarn",
+    "build": "npx gulp build",
+    "test": "npx gulp build-unit-test"
   },
   "repository": {
     "type": "git",
@@ -20,16 +20,18 @@
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "devDependencies": {
-    "@tepez/jasmine-misc-matchers": "^0.2.1",
-    "@tepez/typescript-build-gulp-tasks": "^3.1.0",
-    "@types/jasmine": "^3.3.0",
-    "gulp": "^3.9.1",
-    "joi": "^14.1.0",
-    "np": "^3.0.4"
+    "@tepez/jasmine-misc-matchers": "^0.4.1",
+    "@tepez/typescript-build-gulp-tasks": "^5.0.4",
+    "@tepez/typescript-common": "^0.2.1",
+    "@types/gulp": "^4.0.6",
+    "@types/jasmine": "^3.3.9",
+    "gulp": "^4.0.0",
+    "joi": "^14.3.1",
+    "np": "^4.0.2"
   },
   "dependencies": {
-    "@types/joi": "^14.0.0",
-    "@types/lodash.isregexp": "^4.0.4",
+    "@types/joi": "^14.3.2",
+    "@types/lodash.isregexp": "^4.0.6",
     "lodash.isregexp": "^4.0.1"
   }
 }
