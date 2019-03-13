@@ -20,6 +20,8 @@ describe('toHaveBeenCalledTimes fails specs', () => {
 
     it('positive', () => {
         expect(spec.schema).toFailValidation(100);
+
+        expect(spec.schema).toFailValidation(10.5, 'xxx');
     });
 
     it('negative', () => {

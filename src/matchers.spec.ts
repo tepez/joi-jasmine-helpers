@@ -27,7 +27,7 @@ describe('custom matchers', () => {
                 [
                     {
                         matcherName: 'toPassValidation',
-                        message: 'Expected schema <SCHEMA> to pass value "null" but it failed validation with error ["value" must be a number]',
+                        message: 'Expected schema <SCHEMA> to pass value "null" but it failed validation with message ["value" must be a number]',
                         stack: jasmine.anything() as any,
                         passed: false,
                         expected: null,
@@ -35,7 +35,7 @@ describe('custom matchers', () => {
                     },
                     {
                         matcherName: 'toPassValidation',
-                        message: 'Expected schema <SCHEMA> to pass value "xxx" but it failed validation with error ["value" must be a number]',
+                        message: 'Expected schema <SCHEMA> to pass value "xxx" but it failed validation with message ["value" must be a number]',
                         stack: jasmine.anything() as any,
                         passed: false,
                         expected: 'xxx',
@@ -43,10 +43,19 @@ describe('custom matchers', () => {
                     },
                     {
                         matcherName: 'toPassValidation',
-                        message: 'Expected schema <SCHEMA> to pass value "100" but it failed validation with error ["value" must be a number]',
+                        message: 'Expected schema <SCHEMA> to pass value "100" but it failed validation with message ["value" must be a number]',
                         stack: jasmine.anything() as any,
                         passed: false,
                         expected: ['100', 100, { convert: false }] as any,
+                        actual: jasmine.anything() as any,
+                    },
+
+                    {
+                        matcherName: 'toPassValidation',
+                        message: 'Expected schema <SCHEMA> to pass value "100" with value 105 but it passed with 100',
+                        stack: jasmine.anything() as any,
+                        passed: false,
+                        expected: [100, 105],
                         actual: jasmine.anything() as any,
                     },
                 ],
@@ -88,6 +97,14 @@ describe('custom matchers', () => {
                         stack: jasmine.anything() as any,
                         passed: false,
                         expected: 100 as any,
+                        actual: jasmine.anything() as any,
+                    },
+                    {
+                        matcherName: 'toFailValidation',
+                        message: 'Expected schema <SCHEMA> to fail value "10.5" with message [xxx] but it failed with message ["value" must be an integer]',
+                        stack: jasmine.anything() as any,
+                        passed: false,
+                        expected: [10.5, 'xxx'],
                         actual: jasmine.anything() as any,
                     },
                 ],

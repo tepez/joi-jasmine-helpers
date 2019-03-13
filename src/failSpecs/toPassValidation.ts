@@ -22,6 +22,7 @@ describe('toHaveBeenCalledTimes fails specs', () => {
         expect(spec.schema).toPassValidation(null);
         expect(spec.schema).toPassValidation('xxx');
         expect(spec.schema).toPassValidation('100', 100, { convert: false });
+        expect(spec.schema).toPassValidation(100, 105);
     });
 
     it('negative', () => {

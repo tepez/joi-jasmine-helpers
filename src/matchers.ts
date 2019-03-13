@@ -36,7 +36,7 @@ export const matchers: CustomMatcherFactories = {
                 if (validationError) {
                     return {
                         pass: false,
-                        message: `Expected schema ${schemaToString(schema)} to pass value "${srcValue}" but it failed validation with error [${validationError.message}]`,
+                        message: `Expected schema ${schemaToString(schema)} to pass value "${srcValue}" but it failed validation with message [${validationError.message}]`,
                     };
                 } else if (typeof expectedValue !== 'undefined' && !util.equals(actualValue, expectedValue)) {
                     return {
@@ -87,7 +87,7 @@ export const matchers: CustomMatcherFactories = {
                 } else if (typeof messageMatcher !== 'undefined' && !compareErrorMessages(validationError, messageMatcher)) {
                     return {
                         pass: false,
-                        message: `Expected schema ${schemaToString(schema)} to fail value "${srcValue}" with message ${messageMatcher} but it failed with ${validationError.message}`,
+                        message: `Expected schema ${schemaToString(schema)} to fail value "${srcValue}" with message [${messageMatcher}] but it failed with message [${validationError.message}]`,
                     };
                 }
 
