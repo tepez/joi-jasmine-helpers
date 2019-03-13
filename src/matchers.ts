@@ -22,18 +22,18 @@ function schemaToString(_schema: Schema): string {
 export const matchers: CustomMatcherFactories = {
     toPassValidation: (util) => {
         return {
-            compare: (schema: Schema, value: any, expectedValue?: any, validateOptions?: ValidationOptions) => {
-                const validationResult = schema.validate(value, validateOptions);
+            compare: (schema: Schema, srcValue: any, expectedValue?: any, validateOptions?: ValidationOptions) => {
+                const { value: actualValue, error: validationError } = schema.validate(srcValue, validateOptions);
 
-                if (validationResult.error) {
+                if (validationError) {
                     return {
                         pass: false,
-                        message: `Expected schema ${schemaToString(schema)} to pass value "${value}" but it failed validation`,
+                        message: `Expected schema ${schemaToString(schema)} to pass value "${srcValue}" but it failed validation with error [${validationError.message}]`,
                     };
-                } else if (typeof expectedValue !== 'undefined' && !util.equals(validationResult.value, expectedValue)) {
+                } else if (typeof expectedValue !== 'undefined' && !util.equals(actualValue, expectedValue)) {
                     return {
                         pass: false,
-                        message: `Expected schema ${schemaToString(schema)} to pass value "${value}" with value ${jasmine.pp(expectedValue)} but it passed with ${jasmine.pp(validationResult.value)}`,
+                        message: `Expected schema ${schemaToString(schema)} to pass value "${srcValue}" with value ${jasmine.pp(expectedValue)} but it passed with ${jasmine.pp(actualValue)}`,
                     };
                 }
 
@@ -43,7 +43,7 @@ export const matchers: CustomMatcherFactories = {
             },
 
             negativeCompare: () => {
-                throw new Error('Use toFailValidation instead');
+                throw new Error('Use toFailValidation instead of not.toPassValidation');
             },
         }
     },
@@ -66,20 +66,20 @@ export const matchers: CustomMatcherFactories = {
         }
 
         return {
-            compare: (schema: Schema, value: any, messageMatcher?: MessageMatcher, validateOptions?: ValidationOptions) => {
+            compare: (schema: Schema, srcValue: any, messageMatcher?: MessageMatcher, validateOptions?: ValidationOptions) => {
                 testMessageMatcher(messageMatcher);
 
-                const validationResult = schema.validate(value, validateOptions);
+                const { error: validationError } = schema.validate(srcValue, validateOptions);
 
-                if (!validationResult.error) {
+                if (!validationError) {
                     return {
                         pass: false,
-                        message: `Expected schema ${schemaToString(schema)} to fail value "${value}" but it passed`,
+                        message: `Expected schema ${schemaToString(schema)} to fail value "${srcValue}" but it passed`,
                     };
-                } else if (typeof messageMatcher !== 'undefined' && !compareErrorMessages(validationResult.error, messageMatcher)) {
+                } else if (typeof messageMatcher !== 'undefined' && !compareErrorMessages(validationError, messageMatcher)) {
                     return {
                         pass: false,
-                        message: `Expected schema ${schemaToString(schema)} to fail value "${value}" with message ${messageMatcher} but it failed with ${validationResult.error.message}`,
+                        message: `Expected schema ${schemaToString(schema)} to fail value "${srcValue}" with message ${messageMatcher} but it failed with ${validationError.message}`,
                     };
                 }
 
@@ -89,7 +89,7 @@ export const matchers: CustomMatcherFactories = {
             },
 
             negativeCompare: () => {
-                throw new Error('Use toPassValidation instead');
+                throw new Error('Use toPassValidation instead of not.toFailValidation');
             },
         }
     },

@@ -27,7 +27,7 @@ describe('custom matchers', () => {
                 [
                     {
                         matcherName: 'toPassValidation',
-                        message: 'Expected schema <SCHEMA> to pass value "null" but it failed validation',
+                        message: 'Expected schema <SCHEMA> to pass value "null" but it failed validation with error ["value" must be a number]',
                         stack: jasmine.anything() as any,
                         passed: false,
                         expected: null,
@@ -35,7 +35,7 @@ describe('custom matchers', () => {
                     },
                     {
                         matcherName: 'toPassValidation',
-                        message: 'Expected schema <SCHEMA> to pass value "xxx" but it failed validation',
+                        message: 'Expected schema <SCHEMA> to pass value "xxx" but it failed validation with error ["value" must be a number]',
                         stack: jasmine.anything() as any,
                         passed: false,
                         expected: 'xxx',
@@ -43,7 +43,7 @@ describe('custom matchers', () => {
                     },
                     {
                         matcherName: 'toPassValidation',
-                        message: 'Expected schema <SCHEMA> to pass value "100" but it failed validation',
+                        message: 'Expected schema <SCHEMA> to pass value "100" but it failed validation with error ["value" must be a number]',
                         stack: jasmine.anything() as any,
                         passed: false,
                         expected: ['100', 100, { convert: false }] as any,
@@ -53,7 +53,7 @@ describe('custom matchers', () => {
                 [
                     {
                         matcherName: '',
-                        message: 'Error: Use toFailValidation instead',
+                        message: 'Error: Use toFailValidation instead of not.toPassValidation',
                         stack: jasmine.anything() as any,
                         passed: false,
                         expected: '',
@@ -94,7 +94,7 @@ describe('custom matchers', () => {
                 [
                     {
                         matcherName: '',
-                        message: 'Error: Use toPassValidation instead',
+                        message: 'Error: Use toPassValidation instead of not.toFailValidation',
                         stack: jasmine.anything() as any,
                         passed: false,
                         expected: '',
