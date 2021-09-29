@@ -10,6 +10,12 @@
 npm install --save @tepez/joi-jasmine-helpers
 ```
 
+## Compatibility
+
+| Version |  [Joi](https://github.com/sideway/joi) |
+| ------- |  ------------------------------------- |
+| `0.2.x`  |  `14 joi`                             |
+
 ## Usage
 
 ```js
