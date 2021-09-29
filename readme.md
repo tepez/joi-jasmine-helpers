@@ -14,6 +14,7 @@ npm install --save @tepez/joi-jasmine-helpers
 
 | Version |  [Joi](https://github.com/sideway/joi) |
 | ------- |  ------------------------------------- |
+| `1.x.x`  |  `17 joi`                             |
 | `0.2.x`  |  `14 joi`                             |
 
 ## Usage
