@@ -20,17 +20,16 @@
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "devDependencies": {
-    "@tepez/jasmine-misc-matchers": "^0.4.1",
-    "@tepez/typescript-build-gulp-tasks": "^5.0.4",
-    "@tepez/typescript-common": "^0.2.1",
-    "@types/gulp": "^4.0.6",
-    "@types/jasmine": "^3.3.9",
-    "gulp": "^4.0.0",
-    "joi": "^14.3.1",
-    "np": "^4.0.2"
+    "@tepez/jasmine-misc-matchers": "^1.0.0",
+    "@tepez/typescript-build-gulp-tasks": "^6.5.1",
+    "@tepez/typescript-common": "^0.2.2",
+    "@types/gulp": "^4.0.9",
+    "@types/jasmine": "^3.9.1",
+    "gulp": "^4.0.2",
+    "joi": "^17.4.2",
+    "np": "^7.5.0"
   },
   "dependencies": {
-    "@types/joi": "^14.3.2",
     "@types/lodash.isregexp": "^4.0.6",
     "lodash.isregexp": "^4.0.1"
   }
