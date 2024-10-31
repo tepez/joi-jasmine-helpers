@@ -1,10 +1,18 @@
 {
   "extends": "./node_modules/@tepez/typescript-common/tsconfig-node",
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/failSpecs/**/*.ts",
+  ],
   "compilerOptions": {
     "outDir": "dist",
     "declaration": true,
     "declarationDir": "dist",
     "types": [
+      "node",
       "jasmine"
     ]
   }

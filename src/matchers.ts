@@ -41,7 +41,7 @@ export const matchers: CustomMatcherFactories = {
                 } else if (typeof expectedValue !== 'undefined' && !util.equals(actualValue, expectedValue)) {
                     return {
                         pass: false,
-                        message: `Expected schema ${schemaToString(schema)} to pass value "${srcValue}" with value ${jasmine.pp(expectedValue)} but it passed with ${jasmine.pp(actualValue)}`,
+                        message: `Expected schema ${schemaToString(schema)} to pass value "${srcValue}" with value ${util.pp(expectedValue)} but it passed with ${util.pp(actualValue)}`,
                     };
                 }
 

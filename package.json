@@ -15,22 +15,24 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npx gulp build",
-    "test": "npx gulp build-unit-test",
-    "update": "npx gulp build && npx np --no-publish --no-yarn"
+    "build": "npm run clean && tsc",
+    "clean": "del-cli dist",
+    "dev": "nodemon --watch \"src/**\" --ext ts --exec \"node -r ts-node/register/transpile-only node_modules/jasmine/bin/jasmine.js --config=node_modules/@tepez/typescript-build-gulp-tasks/dist/jasmine/dev.js\"",
+    "dev-debug": "nodemon --watch \"src/**\" --ext ts --exec \"node -r ts-node/register/transpile-only --inspect node_modules/jasmine/bin/jasmine.js --config=node_modules/@tepez/typescript-build-gulp-tasks/dist/jasmine/dev.js\"",
+    "test": "node -r ts-node/register/transpile-only node_modules/jasmine/bin/jasmine.js --config=node_modules/@tepez/typescript-build-gulp-tasks/dist/jasmine/build.js",
+    "test-debug": "node -r ts-node/register/transpile-only --inspect-brk node_modules/jasmine/bin/jasmine.js --config=node_modules/@tepez/typescript-build-gulp-tasks/dist/jasmine/build.js",
+    "update": "npm run build && npx np --no-publish"
   },
   "dependencies": {
-    "@types/lodash.isregexp": "^4.0.6",
+    "@types/lodash.isregexp": "^4.0.9",
     "lodash.isregexp": "^4.0.1"
   },
   "devDependencies": {
-    "@tepez/jasmine-misc-matchers": "^1.0.0",
-    "@tepez/typescript-build-gulp-tasks": "^6.5.1",
-    "@tepez/typescript-common": "^0.2.2",
-    "@types/gulp": "^4.0.9",
-    "@types/jasmine": "^3.9.1",
-    "gulp": "^4.0.2",
-    "joi": "^17.4.2",
-    "np": "^7.5.0"
+    "@tepez/jasmine-misc-matchers": "^1.4.0",
+    "@tepez/typescript-build-gulp-tasks": "^8.0.0",
+    "@tepez/typescript-common": "^2.0.0",
+    "@types/jasmine": "^5.1.4",
+    "joi": "^17.13.3",
+    "np": "^10.0.7"
   }
 }
