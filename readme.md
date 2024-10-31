@@ -2,7 +2,6 @@
 > Custom matchers for writing unit test in Jasmine for [hapijs/joi](https://github.com/hapijs/joi) schemas and extensions
 
 [![npm version](https://badge.fury.io/js/%40tepez%2Fjoi-jasmine-helpers.svg)](https://badge.fury.io/js/%40tepez%2Fjoi-jasmine-helpers)
-[![Build Status](https://secure.travis-ci.org/tepez/joi-jasmine-helpers.svg?branch=master)](http://travis-ci.org/tepez/joi-jasmine-helpers)
 
 ## Install
 
